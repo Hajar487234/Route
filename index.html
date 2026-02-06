@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina di Prova HTML</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Ciao Mondo!</h1>
+        <p>Questa è una pagina HTML di prova.</p>
+        <button id="mioBottone">Cliccami</button>
+        <p id="messaggio"></p>
+    </div>
+
+    <script>
+        document.getElementById('mioBottone').onclick = function() {
+            document.getElementById('messaggio').innerText = 'Hai cliccato il bottone! 🎉';
+            document.getElementById('messaggio').style.color = 'green';
+        }
+    </script>
+
+</body>
+</html>
