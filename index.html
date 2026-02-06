@@ -1,9 +1,103 @@
 <!DOCTYPE html>
-<html>
+<html lang="it">
 <head>
-    <title>tua madre</title>
+  <meta charset="UTF-8">
+  <title>Route</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <audio id="keySound" src="key.mp3" preload="auto"></audio>
+  <audio id="loadInSound" src="load-in.mp3" preload="auto"></audio>
+  <audio id="loadDoneSound" src="done.mp3" preload="auto"></audio>
+
+
 </head>
+<script type="module">
+  // codice Firebase qui
+</script>
+
 <body>
-    <h1>Ciao mondo!</h1>
+
+  <img src="logo.png" class="logo" alt="Route">
+
+  <!-- HOME -->
+  <div class="menu" id="home">
+    <button class="btn-home" onclick="playClick(); openLogin()">Accedi</button>
+    <button class="btn-home" onclick="playClick(); openRegister()">Registrati</button>
+
+  </div>
+
+  <!-- LOGIN -->
+  <div class="card" id="login">
+    <div class="close" onclick="goHome()">✖</div>
+    <div class="close" onclick="playClick(); goHome()">✖</div>
+
+    <h2>Bentornato!</h2>
+
+    <label>Email</label>
+    <input type="email">
+
+    <label>Password</label>
+    <input type="password">
+
+    <button class="btn-card" onclick="playClick()">Accedi</button>
+
+
+    <div class="small-text">
+  Sei nuovo?
+  <span class="mini-btn" onclick="playClick(); openRegister()">Registrati</span>
+
+
+</div>
+
+  </div>
+
+  <!-- REGISTER -->
+  <div class="card" id="register">
+    <div class="close" onclick="goHome()">✖</div>
+    <div class="close" onclick="playClick(); goHome()">✖</div>
+
+    <h2>Benvenuto!</h2>
+
+    <label>Email</label>
+    <input type="email">
+
+    <label>Password</label>
+    <input type="password">
+
+    <label>Conferma password</label>
+    <input type="password">
+
+    <button class="btn-card" onclick="playClick()">Registrati</button>
+
+
+    <div class="small-text">
+  Hai già un account?
+  <span class="mini-btn" onclick="playClick(); openLogin()">Accedi</span>
+
+
+</div>
+
+  </div>
+  
+  <!-- LOADING -->
+<div class="card loading-card" id="loading">
+  <div class="loading-box">
+    <div class="loading-box">
+      <div class="shine"></div>
+      <img src="leaf.png" class="leaf black">
+
+      <img src="leaf.png" class="leaf white fill">
+    </div>
+
+  </div>
+</div>
+
+
+
+
+  <script src="script.js"></script>
+  <audio id="clickSound" src="click.mp3" preload="auto"></audio>
+
+
 </body>
 </html>
