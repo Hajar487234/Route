@@ -1,0 +1,133 @@
+/* TPYE FONT UTILIZZATO */
+    @font-face{
+    font-family: "MoreSugar";
+    src: url("more-sugar.regular.ttf") format("truetype");
+    }
+
+    *{ 
+    box-sizing:border-box; 
+    }
+
+/* BODY */
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: "MoreSugar", cursive;
+        background: url("sfondo.png") center/cover no-repeat;
+    }
+
+/* TITOLO*/
+    logo{
+    position:absolute;
+    top:30px;
+    left:50%;
+    width:450px;
+    }
+
+/* CARATTERISTICHE FONT DELLA SCHERMATA ACCESSO/REGISTRAZIONE */
+    .text_welcoming{
+        margin: 0;
+        font-size: 50px;
+        padding-top:10px;
+        color: white;
+        text-align: center;
+    }
+    .text_ACC_REG{
+        margin: 0;
+        font-size: 45px;
+        color: white;
+    }
+    .text_MIN_ACC_REG{
+        margin: 0;
+        font-size: 35px;
+        color: black;
+    }
+    .text_EMA_PAS{
+        width: 90%;
+        margin: 0;
+        font-size: 35px;
+        text-align: left;
+        color: white;
+    }
+
+/* PULSANTI DI REGISTRAZIONE ED ACCESSO */
+    .acc, .reg{
+        border-radius: 25px;
+        height: 115px;
+        width: 90%;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #2e7d32;
+        border: 4px solid #16332d;
+        box-shadow: 0 8px 0 #16332d;
+    }
+    .acc_mini, .reg_mini{
+        border-radius: 10px;
+        height: 50px;
+        width: 200px;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: white;
+        border: 3px solid #16332d;
+        box-shadow: 0 2px 0 #16332d;
+    }
+
+/* "SCATOLA" DEL PULSANTE */
+    .scatola_bottoni{
+        gap: 20px;        
+        width: 450px;
+        margin-top: 220px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .mini_scatola_bottoni {
+        margin-bottom: 25px; 
+        gap: 25px;    
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+/* CASELLA TESTO */
+    .cas_tes{
+        border-radius: 15px;
+        height: 50px;
+        width: 95%;     
+        margin: 5px 0 20px 0;
+        padding-left: 10px;
+        background-color: white;
+        border: 3px solid #16332d;
+    }
+
+/* BACKGROUND FINESTRA ACCESSO */
+    .BG_acc{
+        padding-left: 25px;
+        border-radius: 15px;
+        height: 455px;
+        width: 620px;
+        margin-top: 300px;
+        background-color: #2e7d32;
+        border: 6px solid #16332d;
+        box-shadow: 0 8px 0 #16332d;
+    }
+
+/* BACKGROUND FINESTRA REGISTRAZIONE */
+    .BG_reg{
+        padding-left: 10px;
+        border-radius: 15px;
+        height: 525px;
+        width: 620px;
+        margin-top: 280px;
+        background-color: #2e7d32;
+        border: 6px solid #16332d;
+        box-shadow: 0 8px 0 #16332d;
+    }
