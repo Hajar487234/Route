@@ -8,51 +8,51 @@
 
         <!-- SCHERMATA HOME (ACCESSO/REGISTRAZIONE)-->
         <img src="logo.png" class="logo" alt="Route">
-        <div class="scatola_bottoni">
-            <div class="acc">
+        <div class="scatola_bottoni" id="pagina_01">
+            <div class="acc" id="BottoneAccedi">
                 <p class="text_ACC_REG">Accedi</p>
             </div>
-            <div class="reg">
+            <div class="reg" id="BottoneRegistrati">
                 <p class="text_ACC_REG">Registrati</p>
             </div>
         </div>
 
         <!-- SCHERMATA ACCESSO -->
-        <div class="BG_acc">
+        <div class="BG_acc" id="pagina_02">
             <p class="text_welcoming">Bentornato!</p>
             <p class="text_EMA_PAS">Email</p>
-            <input class="cas_tes" type="text">
+            <input class="cas_tes" type="text" id="logEmail">
             <p class="text_EMA_PAS">Password</p>
-            <input class="cas_tes" type="password">
-            <p class="text_PASS_DIM">Password dimenticata?</p>
-
+            <input class="cas_tes" type="password" id="logPass">
+            <p class="text_PASS_DIM" id="passDimenticata">Password dimenticata?</p>
+            <p id="logAlerta" style="color:red"></p>
             <div class="mini_scatola_bottoni">
-                <div class="acc_mini">
+                <div class="acc_mini" id="accedi">
                     <p class="text_MIN_ACC_REG">accedi</p>
-                </div>
-            </div>
-
+                 </div>
+             </div>
+            
              <div class="mini_scatola_bottoni_ALT">
                 <p class="text_ALT">Sei nuovo?</p>
                 <div class="reg_mini_ALT">
-                    <p class="text_MIN_ACC_REG_ALT">Registrati</p>
+                    <p class="text_MIN_ACC_REG_ALT" id="pagina_03_Ritorno">Registarti</p>
                 </div>
              </div>
-            
+
         </div>
 
         <!-- SCHERMATA REGISTRAZIONE -->
-        <div class="BG_reg">
+        <div class="BG_reg" id="pagina_03">
             <p class="text_welcoming">Benvenuto!</p>
             <p class="text_EMA_PAS">Email</p>
-            <input class="cas_tes" type="text">
+            <input class="cas_tes" type="text" id="regEmail">
             <p class="text_EMA_PAS">Password</p>
-            <input class="cas_tes" type="password">
+            <input class="cas_tes" type="password" id="regPass">
             <p class="text_EMA_PAS">Conferma password</p>
-            <input class="cas_tes" type="password">
-
+            <input class="cas_tes" type="password" id="confPass">
+            <p id="regAlerta" style="color:red"></p>
             <div class="mini_scatola_bottoni">
-                <div class="reg_mini">
+                <div class="reg_mini" id="registrati">
                     <p class="text_MIN_ACC_REG">registrati</p>
                 </div>
             </div>
@@ -60,9 +60,19 @@
             <div class="mini_scatola_bottoni_ALT">
                 <p class="text_ALT">Hai già le credenziali?</p>
                 <div class="acc_mini_ALT">
-                    <p class="text_MIN_ACC_REG_ALT">Accedi</p>
+                    <p class="text_MIN_ACC_REG_ALT" id="pagina_02_Ritorno">Accedi</p>
                 </div>
-             </div>
+            </div>
+
         </div>
+
+        <!--Schermata 4-->
+        <div class="BG_acc" id="pagina_04">
+            <p class="text_welcoming">Bentornato!</p>
+        </div>
+
+        <!-- Java Script -->
+         <script src="script.js" type="module"></script>
+   
     </body>
 </html>
