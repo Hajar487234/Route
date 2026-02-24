@@ -1,1 +1,1 @@
-Mark: Full stack developer (Css % HTML). no cap
+Mark: Full stack developer (Css & HTML). no cap
