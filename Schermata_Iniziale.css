@@ -153,7 +153,7 @@
         font-family: "MoreSugar", cursive;
         font-size: 2.5vh;
         background-color: white;
-        border: 3px solid #16332d;
+        border: 0.3vh solid #16332d;
     }
 
 /* BACKGROUND FINESTRA ACCESSO/REGISTRAZIONE*/
@@ -166,7 +166,7 @@
         margin-bottom: 5vh;
         background-color: #2e7d32;
         border: 6px solid #16332d;
-        box-shadow: 0 8px 0 #16332d;
+        box-shadow: 0 0.8vh 0 #16332d;
     }
     .BG_reg{
         width: 90%;
