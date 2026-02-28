@@ -11,22 +11,49 @@
 /* BODY */
     body{
         margin: 0;
-        min-height: 100vh;
+        height: auto;
         display: flex;
         flex-direction: column;
         align-items: center;
         font-family: "MoreSugar", cursive;
         background: url("sfondo.png") center/cover no-repeat;
     }
+    ol{
+        margin-top: 0.1vh;
+    }
 
 /* CARATTERISTICHE FONT DELLA SCHERMATA ACCESSO/REGISTRAZIONE */
     .text_TITOLO_AGG_COMP{
         font-size: 4.25vh;
+        cursor: default;
         color: black;
     }
     .text_Competenza{
         font-size: 5vh;
         color: white;
+    }
+    .text_Competenza_mini{
+        font-size: 3.5vh;
+        cursor: default;
+        color: white;
+    }
+    .text_Config{
+        font-size: 3.5vh;
+        margin: 2vh 0 0 3.1vh;
+        cursor: default;
+        color: black;
+    }
+    .text_Lista{
+        font-size: 3.25vh;
+        margin: 0;
+        text-align: center;
+        cursor: default;
+        color: black;
+    }
+    li{
+        font-size: 2.5vh;
+        cursor: default;
+        color: black;
     }
 
 /* BACKGROUND APP */
@@ -61,19 +88,18 @@
         position: absolute;
     }
 
-/* BARRA DI RICERCA */
-    .Search_Bar{
+/* CASELLE DI TESTO */
+    .Search_Bar_Box{
         width: 90%;
         height: auto;     
         margin: 0 auto;   
         margin-top: 2vh;
-        display: block; 
         display: flex;
         align-items: center;
         position: relative;  
         justify-content: center; 
     }
-    .Search_Bar img{
+    .Search_Bar_Box img{
         height: 70%;
         width: auto;
         left: 1vh;
@@ -91,17 +117,17 @@
         border: 0.225vh solid #16332d;
     }
 
-/* LISTA COMPETENZE */
+/* CARATTERISTICHE COMPETENZE */
     .Box_Comp{
-            width: 90%;
-            height: auto;     
-            margin: 0 auto;   
-            margin-top: 2vh;
-            align-items: center;
-            flex-direction: column;  
-            overflow-x: hidden;   
-            overflow-y: auto;    
-            scrollbar-width: none;  
+        width: 90%;
+        height: auto;     
+        margin: 0 auto;   
+        margin-top: 2vh;
+        align-items: center;
+        flex-direction: column;  
+        overflow-x: hidden;   
+        overflow-y: auto;    
+        scrollbar-width: none; 
     }
     .Competenza{
         width: 100%;
@@ -111,5 +137,113 @@
         margin: 0 auto; 
         margin-bottom: 2vh;
         cursor: pointer;
-        border: 3px solid #16332d;
+        border: 0.3vh solid #16332d;
+    }
+    .Competenza_mini{
+        width: 100%;
+        height: 7.5vh;     
+        margin-top: 3vh;
+        display: flex;
+        flex-direction: column;  
+        align-items: center;
+        justify-content: center;
+        border-top: 0.3vh solid #16332d;
+        border-bottom: 0.3vh solid #16332d;
+    }
+
+/* ELEMENTI DI CONFIGURAZIONE COMPETENZA*/
+    .Goal_Obiettivo{                
+        width: 90%;
+        height: auto;
+        margin-left: 3.1vh;
+        justify-content: center;  
+        align-items: center; 
+        display: flex; 
+    }
+    .Goal_Type{
+        flex: 1;                 
+        height: 6vh;     
+        border-radius: 1.5vh;
+        font-size: 3vh;
+        padding-left: 1vh;
+        font-family: "MoreSugar", cursive;
+        margin: 0;                
+        box-sizing: border-box;
+        border: 0.2vh solid #16332d;
+    }
+    .Generate_BTN{
+        width: 25%;              
+        margin-left: 1.5vh;
+        height: 6vh;
+        border-radius: 1.5vh;
+        font-size: 3vh;
+        cursor: pointer;
+        display: flex;
+        align-items: center; 
+        justify-content: center;
+        border: 0.225vh solid #16332d;
+        background-color: #349112;
+    }
+    .Box_LISTA{
+        width: 90%;
+        height: auto;    
+        max-height: 55%; 
+        margin: 0 auto;
+        margin-top: 1vh;
+        padding: 1vh;
+        border-radius: 1.5vh;
+        border: 0.2vh solid black;
+        background-color: #fffacb
+    }
+    .Box_LISTA_1{
+        width: 100%;
+        height: auto; 
+        max-height: 90%;    
+        margin: 0 auto;
+        margin-bottom: 2vh;
+        padding: 1vh;
+        align-items: center;
+        flex-direction: column;  
+        overflow-x: hidden;   
+        overflow-y: auto;    
+        border-top: 0.1vh solid black;
+
+    }
+    .Conferma_BTN{
+        width: 90%;
+        height: 6.5vh;
+        margin: auto;
+        margin-top: auto; 
+        margin-bottom: 2vh;
+        border-radius: 1.5vh;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        cursor: pointer; 
+        font-size: 4vh;
+        border: 0.3vh solid black;
+        background-color: #dde2f6;
+    }
+
+/* IMPOSTAZIONE FREQUENZA */
+    .Box_Giorni{
+        width: 90%;
+        height: auto;
+        margin-top: 2vh;
+        margin: 0 auto;
+        gap: auto;
+        justify-content: space-around;
+        display: flex;
+    }
+    .Casella_Giorno{
+        width: 7vh;
+        height: 5vh;
+        border-radius: 1vh;
+        font-size: 2.5vh;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 0.2vh solid black;
+
     }
