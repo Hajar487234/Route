@@ -8,8 +8,9 @@
 
         <!-- SCHERMATA SCELTA COMPETENZA -->
         <div class="BG_APP">
+
             <div class="TITOLO">
-                <img src="Back.png" alt="Back">
+                <img src="Back.png" alt="Back" id="indietro_Home">
                 <p class="text_TITOLO_AGG_COMP">Aggiungi Competenza</p>
             </div>
 
@@ -19,22 +20,24 @@
             </div>
 
             <div class="Box_Comp">
-                <div class="Competenza" style="background-color: #ce0000">
+                <div class="Competenza" style="background-color: #ce0000" id="item01">
                     <p class="text_Competenza">Sport</p>
                 </div>
-                <div class="Competenza" style="background-color: #3ea646">
+                <div class="Competenza" style="background-color: #3ea646" id="item02">
                     <p class="text_Competenza">Botanica</p>
                 </div>
-                <div class="Competenza" style="background-color: #613a00">
+                <div class="Competenza" style="background-color: #613a00" id="item03">
                     <p class="text_Competenza">Arte</p>
                 </div>
-                <div class="Competenza" style="background-color: #dec383">
+                <div class="Competenza" style="background-color: #dec383" id="item04">
                     <p class="text_Competenza">Cucina</p>
                 </div>
-                <div class="Competenza" style="background-color: coral">
+                <div class="Competenza" style="background-color: coral" id="item05">
                     <p class="text_Competenza">Coding</p>
                 </div>
+                <p id="messaggio" style="display:none colore=grey">Non ci sono risultati</p>
             </div>
+
         </div> 
 
         <!-- SCHERMATA AGGIUNZIONE TASK 1 -->
@@ -120,5 +123,9 @@
 
             <div class="Conferma_BTN">Conferma</div>
         </div>  
+
+        <!-- Java Script -->
+         <script src="Schermata_Add.js" type="module"></script>
+
     </body>
 </html>

@@ -1,7 +1,6 @@
 let pagina_01=document.getElementById("pagina_01");
 let pagina_02=document.getElementById("pagina_02");
 let pagina_03=document.getElementById("pagina_03");
-let pagina_04=document.getElementById("pagina_04");
 
 let ritornoAccedi=document.getElementById("pagina_02_Ritorno");
 let ritornoRegistrati=document.getElementById("pagina_03_Ritorno");
@@ -12,13 +11,11 @@ let BottoneRegistrati=document.getElementById("BottoneRegistrati");
 pagina_01.style.display="block";
 pagina_02.style.display="none";
 pagina_03.style.display="none";
-pagina_04.style.display="none";
 
 function nascondiPagine(){
     pagina_01.style.display="none";
     pagina_02.style.display="none";
     pagina_03.style.display="none";
-    pagina_04.style.display="none";
 }
 
 BottoneAccedi.addEventListener("click", function(){
@@ -71,7 +68,7 @@ document.getElementById("accedi").addEventListener("click", function(){
             .then((userCredential) => {
                 messaggio.innerText = "";
                 nascondiPagine();
-                pagina_04.style.display="block";
+                window.location.href = 'Schermata_Home.html';
             })
             .catch((error) => {
                 messaggio.innerText = "Errore"+error.message;
@@ -99,7 +96,7 @@ document.getElementById("registrati").addEventListener("click", function(){
         .then((userCredential) => {
             messaggio.innerText = "";
             nascondiPagine();
-            pagina_04.style.display="block";
+            window.location.href = 'Schermata_Home.html';
         })
         .catch((error) => {
             messaggio.innerText = "Errore"+error.message;
