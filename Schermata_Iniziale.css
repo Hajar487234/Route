@@ -1,0 +1,181 @@
+/* TPYE FONT UTILIZZATO */
+    @font-face{
+    font-family: "MoreSugar";
+    src: url("more-sugar.regular.ttf") format("truetype");
+    }
+
+    *{ 
+    box-sizing:border-box; 
+    }
+
+/* BODY */
+    body{
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: "MoreSugar", cursive;
+        background: url("sfondo.png") center/cover no-repeat;
+    }
+
+/* TITOLO*/
+    .logo{
+        width: 45vh;
+        height: auto;
+        top: 2vh;
+    }
+
+/* CARATTERISTICHE FONT DELLA SCHERMATA ACCESSO/REGISTRAZIONE */
+    .text_welcoming{
+        margin: 0;
+        margin-top: 1vh;
+        font-size: 5vh;
+        padding-top: 1vh;
+        color: white;
+        text-align: center;
+    }
+    .text_ACC_REG{
+        margin: 0;
+        font-size: 4.5vh;
+        color: white;
+    }
+    .text_MIN_ACC_REG{
+        margin: 0;
+        font-size: 5vh;
+        color: black;
+    }
+    .text_EMA_PAS{
+        width: 90%;
+        margin: 0;
+        margin-top: 2vh;
+        font-size: 3.5vh;
+        margin-left: 3vh;
+        text-align: left;
+        color: white;
+    }
+    .text_ALT{
+        margin: 0;
+        font-size: 3vh;
+        text-align: left;
+        color: white;
+    }
+    .text_MIN_ACC_REG_ALT{
+        margin: 0;
+        font-size: 3vh;
+        color: black;
+    }
+    .text_PASS_DIM{
+        font-size: 2vh; 
+        margin-left: 3vh; 
+        text-decoration: underline;  
+        cursor: pointer;          
+        color: #f3ffba;              
+    }
+
+/* PULSANTI DI REGISTRAZIONE ED ACCESSO */
+    .acc, .reg{
+        width: 90%;
+        min-height: 11.5vh;
+        border-radius: 2.5vh;
+        margin-bottom: 2.5vh;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #2e7d32;
+        border: 0.4vh solid #16332d;
+        box-shadow: 0 0.8vh 0 #16332d;
+    }
+    .acc_mini, .reg_mini{
+        width: 60%;        
+        min-height: 5vh;
+        border-radius: 2vh;
+        padding: 0.5vh;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        justify-content: center;
+        background-color: #f3ffba;
+        border: 0.3vh solid #16332d;
+        box-shadow: 0 0.2vh 0 #16332d;
+        margin: 0 auto;   
+    }
+    .acc_mini_ALT, .reg_mini_ALT{
+        width: auto;
+        min-height: 4vh;
+        border-radius: 1.5vh;
+        padding: 0.5vh;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        background-color: white;
+        border: 0.3vh solid #16332d;
+        box-shadow: 0 0.2vh 0 #16332d;
+    }
+
+/* "SCATOLE" */
+    .scatola_bottoni{       
+        width: 90%;
+        max-width: 45vh;  
+        margin-top: 35vh;
+        gap: 2vh; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .mini_scatola_bottoni{
+        margin-top: 3vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .mini_scatola_bottoni_ALT{
+        gap: 1vh;
+        margin: 4vh 0 1.5vh 3vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+
+/* CASELLA TESTO */
+    .cas_tes{
+        width: 90%;
+        min-height: 5vh;     
+        border-radius: 1.5vh;
+        padding: 1vh 1vh; 
+        margin: 0 auto;   
+        display: block; 
+        font-family: "MoreSugar", cursive;
+        font-size: 2.5vh;
+        background-color: white;
+        border: 0.3vh solid #16332d;
+    }
+
+/* BACKGROUND FINESTRA ACCESSO/REGISTRAZIONE*/
+    .BG_acc{
+        width: 90%;
+        max-width: 62vh;
+        min-height: auto;
+        border-radius: 3vh;
+        margin-top: 7vh;
+        margin-bottom: 5vh;
+        background-color: #2e7d32;
+        border: 6px solid #16332d;
+        box-shadow: 0 0.8vh 0 #16332d;
+    }
+    .BG_reg{
+        width: 90%;
+        max-width: 62vh;
+        min-height: auto;
+        border-radius: 3vh;
+        margin-top: 1vh;
+        margin-bottom: 5vh;
+        background-color: #2e7d32;
+        border: 0.6vh solid #16332d;
+        box-shadow: 0 0.8vh 0 #16332d;
+    }
