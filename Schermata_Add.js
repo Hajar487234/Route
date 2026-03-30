@@ -1,11 +1,21 @@
-let pagina_competenza=document.getElementById("Scelta_Competenza");
+let pagina_competenza=document.getElementById("pagina_competenza");
+let pagina_task=document.getElementById("pagina_task");
+let pagina_task_01=document.getElementById("pagina_task_01");
+
+nascondiPagine();
+pagina_competenza.style.display="block";
+
 let indietro_Home=document.getElementById("indietro_Home");
 let CercaCompetenza=document.getElementById("CercaCompetenza");
 let messaggio=document.getElementById("messaggio"); messaggio.style.display="none";
 
 function nascondiPagine(){
     pagina_competenza.style.display="none";
+    pagina_task.style.display="none";
+    pagina_task_01.style.display="none";
 }
+
+// SCHERMATA SCELTA COMPETENZA
 
 indietro_Home.addEventListener("click", function(){
     nascondiPagine();
@@ -44,3 +54,34 @@ CercaCompetenza.addEventListener("input", function(){
     }
 
 });
+
+
+
+
+
+// SCHERMATA AGGIUNZIONE TASK 1
+
+let indietro_competenza=document.getElementById("indietro_competenza");
+let nome_titolo=document.getElementById("nome_titolo");
+
+indietro_competenza.addEventListener("click", function(){
+    nascondiPagine();
+    pagina_competenza.style.display="block";
+});
+
+items.forEach(item =>{
+    item.addEventListener("click", function(){
+        nascondiPagine();
+        pagina_task.style.display="block";
+
+        let colore=getComputedStyle(item).backgroundColor;
+        nome_titolo.style.backgroundColor=colore;
+
+        let text=item.textContent.trim();
+        nome_titolo.querySelector("p").textContent=text;
+    });
+});
+
+
+
+
