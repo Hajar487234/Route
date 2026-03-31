@@ -1,0 +1,18 @@
+#editbtn {
+
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background-color: rgb(236, 236, 142); 
+        color: black;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 8px;
+        font-family: 'Press Start 2P';
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    #editbtn:hover {
+        transform: scale(1.05);
+    }

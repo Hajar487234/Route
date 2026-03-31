@@ -1,0 +1,32 @@
+<style>
+    body{
+        background-color: #72d3d2;
+        margin:0;
+        overflow:hidden;
+    }
+    canvas{
+        image-rendering: pixelated;
+        display: block;
+    }
+</style>
+
+<head>
+<link rel="stylesheet" href="index.css">
+</head>
+
+<div 
+    id="modify-container" 
+    style="position: relative;">
+    <canvas>
+    </canvas>
+
+    <button id="editbtn"style="position: absolute; top: 20px; left: 20px; z-index: 10;" class="editbtn" :hover>
+        Modifica
+    
+    </button>
+</div>
+
+
+
+<canvas></canvas>
+<script src="index.js"></script>
