@@ -30,17 +30,20 @@
     }
     .text_Competenza{
         font-size: 5vh;
+        user-select: none;   ;
         color: white;
     }
     .text_Competenza_mini{
         font-size: 3.5vh;
         cursor: default;
+        user-select: none;   
         color: white;
     }
     .text_Config{
         font-size: 3.5vh;
         margin: 2vh 0 0 3.1vh;
         cursor: default;
+        user-select: none;   
         color: black;
     }
     .text_Lista{
@@ -48,11 +51,13 @@
         margin: 0;
         text-align: center;
         cursor: default;
+        user-select: none;   
         color: black;
     }
     li{
         font-size: 2.5vh;
         cursor: default;
+        user-select: none;   
         color: black;
     }
 
@@ -64,6 +69,7 @@
         display: flex;
         flex-direction: column;
         align-items: stretch; 
+        position: fixed;
         background-color: white;
         border: 0.3vh solid black;
     }
@@ -190,6 +196,7 @@
         max-height: 55%; 
         margin: 0 auto;
         margin-top: 1vh;
+        margin-bottom: 2.5vh;
         padding: 1vh;
         border-radius: 1.5vh;
         border: 0.2vh solid black;
