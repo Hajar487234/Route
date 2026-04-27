@@ -253,3 +253,14 @@
         justify-content: center;
         border: 0.2vh solid black;
     }
+
+    .Casella_PP_Orario{
+        width: 70%;
+        height: 25vh;
+        border-radius: 1.5vh;
+        margin: 0 auto;
+        margin-top: 3vh;
+        background-color: #D3D3D3;
+        border: 0.2vh solid black;
+
+    }
