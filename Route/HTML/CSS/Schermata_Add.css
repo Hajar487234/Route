@@ -41,7 +41,7 @@
     }
     .text_Config{
         font-size: 3.5vh;
-        margin: 2vh 0 0 3.1vh;
+        margin: 0 0 1vh 1.5vh;
         cursor: default;
         user-select: none;   
         color: black;
@@ -58,6 +58,12 @@
         font-size: 2.5vh;
         cursor: default;
         user-select: none;   
+        color: black;
+    }
+    .last{
+        font-size: 2.5vh;
+        cursor: pointer;
+        user-select: none;
         color: black;
     }
 
@@ -121,6 +127,25 @@
         font-size: 2.5vh;
         font-family: "MoreSugar", cursive;
         border: 0.225vh solid #16332d;
+    }
+    .Casella_PP{
+        width: 90%;
+        height: auto;
+        border-radius: 1.5vh;
+        margin: 0 auto;
+        margin-top: 2.5vh;
+
+        background-color: #fffacb;
+        border: 0.2vh solid black;
+
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        gap: 1vh;
+        padding: 1vh;
+
+        overflow-y: auto;
+        box-sizing: border-box;
     }
 
 /* CARATTERISTICHE COMPETENZE */
@@ -234,13 +259,14 @@
 
 /* IMPOSTAZIONE FREQUENZA */
     .Box_Giorni{
-        width: 90%;
+        width: 99%;
         height: auto;
         margin-top: 2vh;
         margin: 0 auto;
         gap: auto;
         justify-content: space-around;
         display: flex;
+        background-color: #fffacb;
     }
     .Casella_Giorno{
         width: 7vh;
@@ -251,16 +277,35 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        cursor: pointer;
         border: 0.2vh solid black;
+        background-color: white;
     }
-
-    .Casella_PP_Orario{
-        width: 70%;
-        height: 25vh;
+    .Add_Orario_BTN{
+        width: 60%;
+        height: 6vh;
         border-radius: 1.5vh;
         margin: 0 auto;
-        margin-top: 3vh;
-        background-color: #D3D3D3;
+        margin-top: 1.5vh;
+        display: flex;              
+        align-items: center;      
+        justify-content: center; 
         border: 0.2vh solid black;
-
+        background-color: #dde2f6;
+    }
+    .Orario_Item{
+        width: 60%;
+        height: 5vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 1vh;
+        border-radius: 1vh;
+        border: 0.2vh solid black;
+        background-color: white;
+    }
+    .Delete_Orario{
+        cursor: pointer;
+        font-size: 2.5vh;
+        margin-left: 1vh;
     }
