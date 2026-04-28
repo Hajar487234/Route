@@ -1,0 +1,101 @@
+/* TPYE FONT UTILIZZATO */
+@font-face{
+    font-family: "MoreSugar";
+    src: url("/Route/more-sugar.regular.ttf") format("truetype");
+    }
+
+    *{ 
+    box-sizing:border-box; 
+    }
+
+/* BODY */
+    body{
+        margin: 0;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: "MoreSugar", cursive;
+        background: url("/Route/HTML/immagini/sfondo.PNG") center/cover no-repeat;
+    }
+    ol{
+        margin-top: 0.1vh;
+    }
+
+/* CARATTERISTICHE FONT DELLA SCHERMATA ACCESSO/REGISTRAZIONE */
+    .text_TITOLO_AGG_COMP{
+        font-size: 4.25vh;
+        cursor: default;
+        color: black;
+    }
+    .text_Competenza{
+        font-size: 5vh;
+        user-select: none;   ;
+        color: white;
+    }
+    .text_Competenza_mini{
+        font-size: 3.5vh;
+        cursor: default;
+        user-select: none;   
+        color: white;
+    }
+    .text_Config{
+        font-size: 3.5vh;
+        margin: 0 0 1vh 1.5vh;
+        cursor: default;
+        user-select: none;   
+        color: black;
+    }
+    .text_Lista{
+        font-size: 3.25vh;
+        margin: 0;
+        text-align: center;
+        cursor: default;
+        user-select: none;   
+        color: black;
+    }
+    li{
+        font-size: 2.5vh;
+        cursor: default;
+        user-select: none;   
+        color: black;
+    }
+    .last{
+        font-size: 2.5vh;
+        cursor: pointer;
+        user-select: none;
+        color: black;
+    }
+
+/* BACKGROUND APP */
+    .BG_APP{
+        width: 65vh;
+        height: 100vh;
+        border-radius: 2.5vh;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch; 
+        position: fixed;
+        background-color: white;
+        border: 0.3vh solid black;
+    }
+
+/* TITOLO PAGINA */
+    .TITOLO{
+        width: 100%;
+        height: 8vh;
+        padding: 0 2vh;
+        margin-top: 0.5vh;
+        display: flex;
+        align-items: center;
+        position: relative;  
+        justify-content: center; 
+        border-bottom: 0.2vh solid gray;
+    }
+    .TITOLO img{
+        height: 50%;
+        width: auto;
+        left: 2vh;
+        cursor: pointer;
+        position: absolute;
+    }

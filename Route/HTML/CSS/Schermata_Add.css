@@ -217,7 +217,7 @@
     }
     .Box_LISTA{
         width: 90%;
-        height: auto;    
+        height: auto;
         max-height: 55%; 
         margin: 0 auto;
         margin-top: 1vh;
@@ -225,21 +225,19 @@
         padding: 1vh;
         border-radius: 1.5vh;
         border: 0.2vh solid black;
-        background-color: #fffacb
+        background-color: #fffacb;
+        overflow-y: auto; 
+        box-sizing: border-box; 
     }
     .Box_LISTA_1{
         width: 100%;
         height: auto; 
-        max-height: 90%;    
         margin: 0 auto;
-        margin-bottom: 2vh;
         padding: 1vh;
         align-items: center;
         flex-direction: column;  
         overflow-x: hidden;   
-        overflow-y: auto;    
         border-top: 0.1vh solid black;
-
     }
     .Conferma_BTN{
         width: 90%;
