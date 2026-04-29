@@ -17,6 +17,7 @@
         align-items: center;
         font-family: "MoreSugar", cursive;
         background: url("/Route/HTML/immagini/sfondo.PNG") center/cover no-repeat;
+        background-attachment: fixed;
     }
     ol{
         margin-top: 0.1vh;
@@ -41,7 +42,14 @@
     }
     .text_Config{
         font-size: 3.5vh;
-        margin: 0 0 1vh 1.5vh;
+        margin: 2vh 0 1vh 3.25vh;
+        cursor: default;
+        user-select: none;   
+        color: black;
+    }
+    .text_Category{
+        font-size: 3.5vh;
+        margin: 0 0 1vh 1vh;
         cursor: default;
         user-select: none;   
         color: black;
@@ -70,12 +78,13 @@
 /* BACKGROUND APP */
     .BG_APP{
         width: 65vh;
-        height: 100vh;
+        height: 100%;
         border-radius: 2.5vh;
         display: flex;
         flex-direction: column;
-        align-items: stretch; 
+        align-items: center;
         position: fixed;
+        overflow: hidden;
         background-color: white;
         border: 0.3vh solid black;
     }
@@ -134,16 +143,12 @@
         border-radius: 1.5vh;
         margin: 0 auto;
         margin-top: 2.5vh;
-
         background-color: #fffacb;
         border: 0.2vh solid black;
-
         flex-direction: row;
         flex-wrap: wrap;
-
         gap: 1vh;
         padding: 1vh;
-
         overflow-y: auto;
         box-sizing: border-box;
     }
@@ -151,14 +156,14 @@
 /* CARATTERISTICHE COMPETENZE */
     .Box_Comp{
         width: 90%;
-        height: auto;     
+        height: 81.5vh;
         margin: 0 auto;   
         margin-top: 2vh;
-        align-items: center;
-        flex-direction: column;  
+        margin-bottom: 2vh;
+        display: flex;       
+        flex-direction: column;             
         overflow-x: hidden;   
-        overflow-y: auto;    
-        scrollbar-width: none; 
+        overflow-y: auto !important;
     }
     .Competenza{
         width: 100%;
@@ -297,6 +302,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        margin-left: 1vh;
         padding: 0 1vh;
         border-radius: 1vh;
         border: 0.2vh solid black;

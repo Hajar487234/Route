@@ -17,6 +17,8 @@
         align-items: center;
         font-family: "MoreSugar", cursive;
         background: url("/Route/HTML/immagini/sfondo.PNG") center/cover no-repeat;
+        background-attachment: fixed;
+
     }
     ol{
         margin-top: 0.1vh;
