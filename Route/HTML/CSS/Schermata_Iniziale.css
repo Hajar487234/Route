@@ -26,23 +26,26 @@
         top: 2vh;
     }
 
-/* CARATTERISTICHE FONT DELLA SCHERMATA ACCESSO/REGISTRAZIONE */
+/* CARATTERISTICHE FONT */
     .text_welcoming{
         margin: 0;
         margin-top: 1vh;
         font-size: 5vh;
-        padding-top: 1vh;
-        color: white;
         text-align: center;
+        padding-top: 1vh;
+        user-select: none;
+        color: white;
     }
     .text_ACC_REG{
         margin: 0;
         font-size: 4.5vh;
+        user-select: none;
         color: white;
     }
     .text_MIN_ACC_REG{
         margin: 0;
         font-size: 5vh;
+        user-select: none;
         color: black;
     }
     .text_EMA_PAS{
@@ -51,6 +54,7 @@
         margin-top: 2vh;
         font-size: 3.5vh;
         margin-left: 3vh;
+        user-select: none;
         text-align: left;
         color: white;
     }
@@ -58,18 +62,21 @@
         margin: 0;
         font-size: 3vh;
         text-align: left;
+        user-select: none;
         color: white;
     }
     .text_MIN_ACC_REG_ALT{
         margin: 0;
         font-size: 3vh;
+        user-select: none;
         color: black;
     }
     .text_PASS_DIM{
         font-size: 2vh; 
         margin-left: 3vh; 
         text-decoration: underline;  
-        cursor: pointer;          
+        cursor: pointer;     
+        user-select: none;     
         color: #f3ffba;              
     }
 

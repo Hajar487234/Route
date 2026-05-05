@@ -19,15 +19,17 @@
         background: url("/Route/HTML/immagini/sfondo.PNG") center/cover no-repeat;
     }
 
-/* CARATTERISTICHE FONT DELLA SCHERMATA ACCESSO/REGISTRAZIONE */
+/* CARATTERISTICHE FONT */
     .text_COMP{
         font-size: 3vh;
         cursor: pointer;
+        user-select: none;
         color: black;
     }
     .text_COMP_SELECTED{
         font-size: 4.25vh;
         cursor: pointer;
+        user-select: none;
         color: black;
     }
 

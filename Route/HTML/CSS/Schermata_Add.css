@@ -22,10 +22,11 @@
         margin-top: 0.1vh;
     }
 
-/* CARATTERISTICHE FONT DELLA SCHERMATA ACCESSO/REGISTRAZIONE */
+/* CARATTERISTICHE FONT */
     .text_TITOLO_AGG_COMP{
         font-size: 4.25vh;
         cursor: default;
+        user-select: none;
         color: black;
     }
     .text_Competenza{
