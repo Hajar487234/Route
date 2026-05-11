@@ -1,0 +1,66 @@
+.strumenti {
+    width: auto;
+    height: 12vh;
+    background-color: transparent;
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: absolute;
+}
+
+
+
+
+.strumenti img{
+    height: 90%;
+    width: auto;
+    cursor: pointer;
+}
+
+
+.strumenti-effects{
+    opacity: 0.6;
+    transition: opacity 0.3s;
+    cursor: pointer;
+  }
+ 
+  .strumenti-effects:hover {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+
+
+  .list{
+
+
+    width: 25%;
+    height: 100%;
+    background-color: #EEDC82;
+    flex-direction: column;
+    display: flex;
+    align-items:flex-end;
+    justify-content: space-around;
+    position: absolute;
+    margin-left: 75%;
+  }
+
+
+  .piante{
+
+
+    width: auto;
+    height: 11vh;
+    background-color: transparent;
+    flex-direction: column;
+    display: flex;
+    align-items:flex-end;
+    justify-content: space-around;
+    position: absolute;
+    margin-left: 75%;
+
+
+  }
+
+
+
