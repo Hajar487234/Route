@@ -32,6 +32,8 @@
     .text_SEZIONE{
         font-size: 3.5vh;
         cursor: default;
+        margin: 0;
+        text-align: center;
         user-select: none;
         color: black;
     }
@@ -101,26 +103,98 @@
         height: auto;
         margin: 0 auto;
         margin-bottom: 2vh;
-        border-bottom: 0.2vh solid gray;
+        display: flex;
+        flex-wrap: wrap; 
+        row-gap: 2vh;
+        border-top: 0.2vh solid gray;
     }
     .FASCIA_SEZIONE{
         width: 100%;
         height: auto;
+        margin-top: 1.5vh;
         border-radius: 1.5vh;
         background-color: #fffacb;
     }
     .BOX_MOD{
-        width: 100%;
+        width: 80%;
         height: auto;
+        gap: 1.5vh;
         display: flex;
-        justify-content: space-between; 
+        justify-content: flex-start; 
         align-items: center; 
     }
-    .BOX_MOD img{
+    .BOX_FOTO{
+        width: 15%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    .BOX_FOTO img{
         height: 4.5vh;
-        width: auto;
-        margin-left: 45vh;
-        margin-right: 2vh;
+    }
+    .BOX_PREF{
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start; 
+        display: flex;
+        gap: 0.8vh; 
+        margin-bottom: 1.5vh;    
+    }
+    .RIGA_SWITCH{
+        width: 100%;
+        display: flex;
+        justify-content: space-between; 
+        align-items: center;            
+        padding-right: 2vh;            
+    }
+    .PREMI_ACC{
+        width: 35%;
+        height: 7.5vh;
+        border-radius: 1.5vh;
+        border: 0.2vh solid black;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    }
+
+/* TOGGLE BUTTON*/
+    .switch{
+        position: relative;
+        display: inline-block;
+        width: 50px;
+        height: 28px;
+    }
+    .switch input{
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+    .slider{
+        position: absolute;
         cursor: pointer;
+        background-color: #ccc;
+        border-radius: 34px;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        transition: 0.4s;
+    }
+    .slider::before{
+        position: absolute;
+        content: "";
+        height: 22px;
+        width: 22px;
+        left: 3px;
+        bottom: 3px;
+        background-color: white;
+        border-radius: 50%;
+        transition: 0.4s;
+    }
+    input:checked + .slider{
+        background-color: #4cd964;
+    }
+    input:checked + .slider::before{
+        transform: translateX(22px);
     }
 
