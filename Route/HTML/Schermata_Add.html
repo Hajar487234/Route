@@ -23,25 +23,32 @@
                 <div class="Competenza" style="background-color: #ce0000" id="item01">
                     <p class="text_Competenza">Sport</p>
                 </div>
+
                 <div class="Competenza" style="background-color: #3ea646" id="item02">
                     <p class="text_Competenza">Botanica</p>
                 </div>
+
                 <div class="Competenza" style="background-color: #613a00" id="item03">
                     <p class="text_Competenza">Arte</p>
                 </div>
+
                 <div class="Competenza" style="background-color: #dec383" id="item04">
                     <p class="text_Competenza">Cucina</p>
                 </div>
+
                 <div class="Competenza" style="background-color: coral" id="item05">
                     <p class="text_Competenza">Coding</p>
                 </div>
+
                 <p id="messaggio" style="display:none; color:grey;">Non ci sono risultati</p>
             </div>
 
         </div> 
 
-        <!-- SCHERMATA AGGIUNZIONE TASK 1 -->
+
+        <!-- SCHERMATA AGGIUNZIONE TASK -->
         <div class="BG_APP" id="pagina_task">
+
             <div class="TITOLO">
                 <img src="/Route/HTML/immagini/Back.PNG" alt="Back" id="indietro_competenza">
                 <p class="text_TITOLO_AGG_COMP">Aggiungi Competenza</p>
@@ -51,67 +58,41 @@
                 <p class="text_Competenza_mini">nome</p>
             </div>
             
-            <p class="text_Config">Qual è ul tuo obiettivo?</p>
+            <p class="text_Config">Qual è il tuo obiettivo?</p>
+
             <div class="Goal_Obiettivo">
                 <input class="Goal_Type" type="text" id="Obiettivo">
-                <div class="Generate_BTN">Genera</div>
+                <div class="Generate_BTN" id="Genera">Genera</div>
             </div>
 
             <div class="Box_LISTA">
                 <p class="text_Lista">- Lista task -</p>
-                <div class="Box_LISTA_1">
-                    <ol>
-                        <li>Fare 20 flessioni</li>
-                        <li>Fare 30 squat</li>
-                        <li>Correre per 10 minuti</li>
-                        <li>Fare 40 addominali</li>
-                        <li>Plank per 1 minuto</li>
-                        <li>Saltare la corda per 5 minuti</li>
-                        <li>Fare 15 affondi per gamba</li>
-                        <li>Stretching completo per 10 minuti</li>
-                        <li>Fare 25 jumping jack</li>
-                        <li>Camminare per 20 minuti</li>
-                        <li>Bere 2 litri d’acqua</li>
-                        <li>Fare 3 serie di burpees</li>
-                        <li>Allenare le spalle per 10 minuti</li>
-                        <li>Fare 50 mountain climber</li>
-                        <li>Allenare i polpacci per 5 minuti</li>
-                        <li>Fare 3 serie di tricipiti</li>
-                        <li>Allenare i bicipiti per 10 minuti</li>
-                        <li>Fare 20 piegamenti sulle ginocchia</li>
-                        <li>Correre 2 km</li>
-                        <li>Fare 1 minuto di plank laterale per lato</li>
-                        <li>Fare 30 crunch inversi</li>
-                        <li>Allenare la schiena per 10 minuti</li>
-                        <li>Fare 20 squat jump</li>
-                        <li>Stretching gambe per 5 minuti</li>
-                        <li>Fare 3 serie di addominali obliqui</li>
-                        <li>Salire e scendere le scale per 5 minuti</li>
-                        <li>Fare 15 dip su sedia</li>
-                        <li>Allenare il core per 10 minuti</li>
-                        <li>Fare 10 sprint brevi</li>
-                        <li>Defaticamento e respirazione per 5 minuti</li>
-                    </ol>
+
+                <div class="Box_LISTA_1" id="lista">
+                    
                 </div>
             </div>
 
-            <div class="Conferma_BTN">Successivo</div>
+            <div class="Conferma_BTN" id="Successivo">Successivo</div>
 
         </div>  
         
-        <!-- SCHERMATA AGGIUNZIONE TASK 1 -->
-         <div class="BG_APP" id="pagina_task_01">
+
+        <!-- SCHERMATA ORGANIZZAZIONE TASK -->
+        <div class="BG_APP" id="pagina_task_01">
+
             <div class="TITOLO">
-                <img src="/Route/HTML/immagini/Back.PNG" alt="Back">
-                <p class="text_TITOLO_AGG_COMP">Aggiungi Competenza</p>
+                <img src="/Route/HTML/immagini/Back.PNG" alt="Back" id="indietro_task">
+                <p class="text_TITOLO_AGG_COMP">Organizza Task</p>
             </div>
 
-            <div class="Competenza_mini" style="background-color: #ce0000">
-                <p class="text_Competenza_mini">- Sport -</p>
+            <div class="Competenza_mini" style="background-color: #ce0000" id="nome_titolo_01">
+                <p class="text_Competenza_mini">nome</p>
             </div>
 
             <div class="Casella_PP">
-                <p class="text_Config">Frequenza</p>
+                <p class="text_Config">In quali giorni vuoi svolgere i task?</p>
+
                 <div class="Box_Giorni">
                     <div class="Casella_Giorno">Lun</div>
                     <div class="Casella_Giorno">Mar</div>
@@ -123,23 +104,25 @@
                 </div>
             </div>
 
-                <div class="Casella_PP">
-                    <p class="text_Config">Orario</p>
-                    <div class="Orario_Item">
-                        <div class="text_Lista">10:30</div>
-                        <div class="Delete_Orario">x</div>
-                    </div>
-                <div class="Add_Orario_BTN">
-                    <p class="last">+ Aggiungi reminder</p>
-                </div>
+            <div class="Casella_PP">
+                <p class="text_Config">A che ora vuoi ricevere i task?</p>
 
-                </div>
+                <div id="lista_Orari"></div>
 
-            <div class="Conferma_BTN">Conferma</div>
-        </div>  
+                <input class="input_Orario" type="time" id="input_Orario">
+
+                <div class="Add_Orario_BTN" id="Aggiungi_Orario">
+                    <p class="last">+ Aggiungi orario</p>
+                </div>
+            </div>
+
+            <div class="Conferma_BTN" id="Conferma_Calendario">Conferma</div>
+
+        </div>
+
 
         <!-- Java Script -->
-         <script src="/Route/JavaScript/Schermata_Add.js" type="module"></script>
+        <script src="/Route/JavaScript/Schermata_Add.js" type="module"></script>
 
     </body>
 </html>

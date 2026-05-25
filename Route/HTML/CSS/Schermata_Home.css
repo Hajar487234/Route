@@ -78,3 +78,53 @@
         scrollbar-width: none;  
         border-bottom: 0.2vh solid gray;
     }
+
+    /* TITOLO COMPETENZA */
+.Titolo_Comp{
+    width: 50%;
+    min-height: 6vh;
+    margin: 2vh auto 1vh auto;
+    border-radius: 1vh;
+    background-color: #dfeeda;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4vh;
+    color: black;
+}
+
+/* BOX TASK */
+.Box_Task{
+    width: 90%;
+    height: 63vh;
+    margin: 1vh auto;
+    background-color: #fff8c9;
+    border: 0.25vh solid black;
+    border-radius: 1vh;
+    padding: 1vh;
+    overflow-y: auto;
+}
+
+/* TITOLO TASK */
+.Titolo_Task{
+    margin: 0;
+    padding-bottom: 1vh;
+    border-bottom: 0.2vh solid #a38c38;
+    font-size: 3vh;
+    text-align: center;
+}
+
+/* LISTA TASK HOME */
+#lista_task_home{
+    font-size: 2.3vh;
+    line-height: 1.5;
+}
+
+#lista_task_home ol{
+    margin-top: 1vh;
+    padding-left: 4vh;
+}
+
+#lista_task_home li{
+    margin-bottom: 1vh;
+}
