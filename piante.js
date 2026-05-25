@@ -1,16 +1,13 @@
 export const qua = 20;
 
-
 export function drawGriglia(ctx, collisionCtx, collisionImage) {
     const col = Math.ceil(collisionImage.width / qua);
     const rig = Math.ceil(collisionImage.height / qua);
-
 
     ctx.strokeStyle = "rgba(128, 128, 128, 0.5)";
     ctx.lineWidth = 1;
    
     const collisionData = collisionCtx.getImageData(0, 0, collisionImage.width, collisionImage.height).data;
-
 
     for (let i = 0; i < rig; i++) {
         for (let j = 0; j < col; j++) {
@@ -29,9 +26,12 @@ export function drawGriglia(ctx, collisionCtx, collisionImage) {
     }
 }
 
-
-
-
-
-
-
+window.showList = function() {
+    const List = document.getElementById("list");
+   
+    if ( List.style.display === "none"|| list.style.display === "") {
+      List.style.display = "block";
+    } else {
+      List.style.display = "none";
+    }
+}
