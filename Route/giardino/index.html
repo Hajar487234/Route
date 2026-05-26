@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Giardino Griglia</title>
+    <link rel="stylesheet" href="giard.css">
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+        canvas {
+            image-rendering: pixelated;
+            display: block;
+        }
+
+        .drag-flower {
+            position: absolute;
+            pointer-events: none;
+            z-index: 1000;
+            transform: translate(-50%, -50%);
+            width: 32px;
+            height: auto;
+            display: none;
+            image-rendering: pixelated;
+        }
+    </style>
+</head>
+<body>
+
+    <img src="flower1finalphase.PNG" id="ghost-flower" class="drag-flower">
+
+    <div class="strumenti">
+        <img src="../HTML/immagini/Back.PNG" alt="Back" id="backHome" class="strumenti-effects">
+        <img src="Shovel.PNG" alt="Shovel" id="shovel" class="strumenti-effects">
+        <img src="TrashCan.PNG" alt="Trash" class="strumenti-effects">
+    </div>
+
+    <div class="list" id="list" style="display: none;">
+        <div class="piante">
+            <img src="flower1finalphase.PNG" alt="flower1finalphase" id="flower1finalphase" style="cursor: pointer;">
+        </div>
+    </div>
+
+    <canvas></canvas>
+    <script type="module" src="index.js"></script>
+</body>
+</html>

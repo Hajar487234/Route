@@ -5,9 +5,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/12.9.0/firebas
 import { 
     getFirestore,
     collection,
-    addDoc,
-    doc,
-    updateDoc
+    addDoc
 } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-firestore.js";
 
 import { 
@@ -28,112 +26,111 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
 
-let utenteLoggato=null;
+let utenteLoggato = null;
 
 onAuthStateChanged(auth, function(user){
     if(user){
-        utenteLoggato=user;
+        utenteLoggato = user;
     }else{
-        utenteLoggato=null;
+        utenteLoggato = null;
     }
 });
 
 
 // PAGINE
 
-let pagina_competenza=document.getElementById("pagina_competenza");
-let pagina_task=document.getElementById("pagina_task");
-let pagina_task_01=document.getElementById("pagina_task_01");
+let pagina_competenza = document.getElementById("pagina_competenza");
+let pagina_task = document.getElementById("pagina_task");
+let pagina_task_01 = document.getElementById("pagina_task_01");
 
 nascondiPagine();
-pagina_competenza.style.display="block";
+pagina_competenza.style.display = "flex";
 
-let indietro_Home=document.getElementById("indietro_Home");
-let CercaCompetenza=document.getElementById("CercaCompetenza");
-let messaggio=document.getElementById("messaggio"); 
-messaggio.style.display="none";
+let indietro_Home = document.getElementById("indietro_Home");
+let CercaCompetenza = document.getElementById("CercaCompetenza");
+let messaggio = document.getElementById("messaggio"); 
+messaggio.style.display = "none";
 
 function nascondiPagine(){
-    pagina_competenza.style.display="none";
-    pagina_task.style.display="none";
-    pagina_task_01.style.display="none";
+    pagina_competenza.style.display = "none";
+    pagina_task.style.display = "none";
+    pagina_task_01.style.display = "none";
 }
 
 
 // SCHERMATA SCELTA COMPETENZA
 
 indietro_Home.addEventListener("click", function(){
-    nascondiPagine();
-    window.location.href='Schermata_Home.html';
+    window.location.href = "Schermata_Home.html";
 });
 
-const items=document.querySelectorAll("div[id^='item']");
+const items = document.querySelectorAll("div[id^='item']");
 
 CercaCompetenza.addEventListener("input", function(){
     const ricerca = this.value.toLowerCase();
-    let cont=0;
+    let cont = 0;
 
-    if(ricerca==""){
+    if(ricerca == ""){
         items.forEach(item =>{
-            item.style.display="block";
+            item.style.display = "block";
         });
-        messaggio.style.display="none";
+        messaggio.style.display = "none";
         return;
     }
 
     items.forEach(item =>{
-        const text=item.textContent.toLowerCase().trim();
+        const text = item.textContent.toLowerCase().trim();
 
         if(text.startsWith(ricerca)){
-            item.style.display="block";
+            item.style.display = "block";
             cont++;
         }else{
-            item.style.display="none";
+            item.style.display = "none";
         }
     });
 
-    if(cont==0){
-        messaggio.style.display="block";
-    }else{
-        messaggio.style.display="none";
-    }
-
+    messaggio.style.display = cont == 0 ? "block" : "none";
 });
 
 
 // SCHERMATA AGGIUNZIONE TASK
 
-let indietro_competenza=document.getElementById("indietro_competenza");
-let nome_titolo=document.getElementById("nome_titolo");
-let nome_titolo_01=document.getElementById("nome_titolo_01");
+let indietro_competenza = document.getElementById("indietro_competenza");
+let nome_titolo = document.getElementById("nome_titolo");
+let nome_titolo_01 = document.getElementById("nome_titolo_01");
 
-let text_Obiettivo=document.getElementById("Obiettivo");
-let button_Genera=document.getElementById("Genera");
-let lista=document.getElementById("lista");
+let text_Obiettivo = document.getElementById("Obiettivo");
+let button_Genera = document.getElementById("Genera");
+let lista = document.getElementById("lista");
 
-let idCompetenzaSalvata="";
+let taskDaSalvare = [];
+let competenzaDaSalvare = "";
+let obiettivoDaSalvare = "";
 
 indietro_competenza.addEventListener("click", function(){
     nascondiPagine();
-    pagina_competenza.style.display="block";
+    pagina_competenza.style.display = "flex";
 });
 
 items.forEach(item =>{
     item.addEventListener("click", function(){
         nascondiPagine();
-        pagina_task.style.display="block";
+        pagina_task.style.display = "flex";
 
-        let colore=getComputedStyle(item).backgroundColor;
-        nome_titolo.style.backgroundColor=colore;
-        nome_titolo_01.style.backgroundColor=colore;
+        let colore = getComputedStyle(item).backgroundColor;
+        nome_titolo.style.backgroundColor = colore;
+        nome_titolo_01.style.backgroundColor = colore;
 
-        let text=item.textContent.trim();
-        nome_titolo.querySelector("p").textContent=text;
-        nome_titolo_01.querySelector("p").textContent=text;
+        let text = item.textContent.trim();
+        nome_titolo.querySelector("p").textContent = text;
+        nome_titolo_01.querySelector("p").textContent = text;
 
-        text_Obiettivo.value="";
-        lista.innerHTML="";
-        idCompetenzaSalvata="";
+        text_Obiettivo.value = "";
+        lista.innerHTML = "";
+
+        taskDaSalvare = [];
+        competenzaDaSalvare = "";
+        obiettivoDaSalvare = "";
 
         pulisciGiorniOrari();
     });
@@ -146,176 +143,153 @@ let TOKEN_HF = "INCOLLA_TOKEN_HUGGING_FACE";
 
 button_Genera.addEventListener("click", async function(){
 
-    let obiettivo=text_Obiettivo.value.trim();
-    let competenza=nome_titolo.querySelector("p").textContent.trim();
+    let obiettivo = text_Obiettivo.value.trim();
+    let competenza = nome_titolo.querySelector("p").textContent.trim();
 
-    if(obiettivo==""){
-        lista.innerHTML="<p>Inserisci prima un obiettivo</p>";
+    if(obiettivo == ""){
+        lista.innerHTML = "<p>Inserisci prima un obiettivo</p>";
         return;
     }
 
-    lista.innerHTML="<p>Generazione task in corso...</p>";
+    lista.innerHTML = "<p>Generazione task in corso...</p>";
 
-    let prompt=`
-    Sei un assistente che crea piani step-by-step.
+    let prompt = `
+Sei un assistente che crea task pratici per aiutare una persona a raggiungere un obiettivo.
 
-    Competenza: ${competenza}
-    Obiettivo utente: ${obiettivo}
+Competenza: ${competenza}
+Obiettivo: ${obiettivo}
 
-    Crea una lista di task molto specifici e pratici.
+Crea una lista di task semplici, realistici e ordinati.
 
-    Regole:
-    - ogni task deve essere corto
-    - massimo 1 azione per task
-    - dividi tutto in piccoli step
-    - niente spiegazioni lunghe
-    - crea almeno 15 task
-    - usa linguaggio semplice
-
-    Rispondi solo con la lista numerata.
-    `;
+Regole obbligatorie:
+- Scrivi SOLO task, niente titolo e niente introduzione.
+- Non usare numeri.
+- Ogni riga deve iniziare con "- ".
+- Crea esattamente 15 task.
+- Ogni task deve essere breve, chiaro e pratico.
+- Ogni task deve contenere una sola azione.
+- Non usare grassetti, markdown avanzato o frasi decorative.
+- Non scrivere spiegazioni lunghe.
+- Non interrompere la lista.
+`;
 
     try{
-        let risposta=await fetch("https://router.huggingface.co/v1/chat/completions", {
-            method:"POST",
-            headers:{
-                "Authorization":"Bearer " + TOKEN_HF,
-                "Content-Type":"application/json"
+        let risposta = await fetch("https://router.huggingface.co/v1/chat/completions", {
+            method: "POST",
+            headers: {
+                "Authorization": "Bearer " + TOKEN_HF,
+                "Content-Type": "application/json"
             },
-            body:JSON.stringify({
-                model:"meta-llama/Llama-3.1-8B-Instruct",
-                messages:[
+            body: JSON.stringify({
+                model: "meta-llama/Llama-3.1-8B-Instruct",
+                messages: [
                     {
-                        role:"user",
-                        content:prompt
+                        role: "user",
+                        content: prompt
                     }
                 ],
-                max_tokens:400
+                max_tokens: 900,
+                temperature: 0.4
             })
         });
 
-        let dati=await risposta.json();
+        let dati = await risposta.json();
 
         if(!risposta.ok){
-            lista.innerHTML="<p>Errore API</p>";
+            lista.innerHTML = "<p>Errore API</p>";
             console.log(dati);
             return;
         }
 
-        let testo=dati.choices[0].message.content;
+        let testo = dati.choices[0].message.content;
 
-        let righe=testo.split("\n");
+        let righe = testo
+            .split("\n")
+            .map(riga => riga.trim())
+            .filter(riga => riga !== "")
+            .map(riga => riga
+                .replace(/^\d+[\.\)]\s*/, "")
+                .replace(/^-\s*/, "")
+                .replace(/^•\s*/, "")
+                .replace(/\*\*/g, "")
+                .trim()
+            )
+            .filter(riga => riga !== "")
+            .slice(0, 15);
 
-        lista.innerHTML="";
+        lista.innerHTML = "";
 
-        let ol=document.createElement("ol");
+        let ul = document.createElement("ul");
 
         righe.forEach(riga =>{
-            if(riga.trim()!=""){
-                let li=document.createElement("li");
-
-                li.textContent=riga
-                    .replace(/^\d+\.\s*/, "")
-                    .replace(/^-\s*/, "");
-
-                ol.appendChild(li);
-            }
+            let li = document.createElement("li");
+            li.textContent = riga;
+            ul.appendChild(li);
         });
 
-        lista.appendChild(ol);
+        lista.appendChild(ul);
 
     }catch(errore){
         console.log(errore);
-        lista.innerHTML="<p>Errore durante la generazione dei task</p>";
+        lista.innerHTML = "<p>Errore durante la generazione dei task</p>";
     }
 
 });
 
 
-// SALVARE LISTA NEL DATABASE
+// SUCCESSIVO: NON SALVA NEL DATABASE
 
-let button_Successivo=document.getElementById("Successivo");
+let button_Successivo = document.getElementById("Successivo");
 
-button_Successivo.addEventListener("click", async function(){
+button_Successivo.addEventListener("click", function(){
 
-    let utente=utenteLoggato;
+    competenzaDaSalvare = nome_titolo.querySelector("p").textContent.trim();
+    obiettivoDaSalvare = text_Obiettivo.value.trim();
 
-    if(!utente){
-        alert("Utente non autenticato");
-        return;
-    }
-
-    let competenza=nome_titolo.querySelector("p").textContent.trim();
-    let obiettivo=text_Obiettivo.value.trim();
-
-    let task=[];
+    taskDaSalvare = [];
 
     document.querySelectorAll("#lista li").forEach(item =>{
-        task.push(item.textContent);
+        taskDaSalvare.push(item.textContent);
     });
 
-    if(task.length==0){
+    if(taskDaSalvare.length == 0){
         alert("Genera prima una lista task");
         return;
     }
 
-    try{
-
-        let documento=await addDoc(collection(db, "competenze"), {
-
-            uid: utente.uid,
-            competenza: competenza,
-            obiettivo: obiettivo,
-            listaTask: task,
-            dataCreazione: new Date()
-
-        });
-
-        idCompetenzaSalvata=documento.id;
-
-        alert("Competenza salvata!");
-
-        nascondiPagine();
-        pagina_task_01.style.display="block";
-
-    }catch(errore){
-
-        console.log(errore);
-        alert("Errore salvataggio database");
-
-    }
-
+    nascondiPagine();
+    pagina_task_01.style.display = "flex";
 });
 
 
 // SCHERMATA GIORNI E ORARI
 
-let indietro_task=document.getElementById("indietro_task");
+let indietro_task = document.getElementById("indietro_task");
 
 indietro_task.addEventListener("click", function(){
     nascondiPagine();
-    pagina_task.style.display="block";
+    pagina_task.style.display = "flex";
 });
 
-let giorni=document.querySelectorAll(".Casella_Giorno");
-let giorniScelti=[];
+let giorni = document.querySelectorAll(".Casella_Giorno");
+let giorniScelti = [];
 
-let input_Orario=document.getElementById("input_Orario");
-let button_Aggiungi_Orario=document.getElementById("Aggiungi_Orario");
-let lista_Orari=document.getElementById("lista_Orari");
+let input_Orario = document.getElementById("input_Orario");
+let button_Aggiungi_Orario = document.getElementById("Aggiungi_Orario");
+let lista_Orari = document.getElementById("lista_Orari");
 
-let orariScelti=[];
+let orariScelti = [];
 
 function pulisciGiorniOrari(){
 
-    giorniScelti=[];
-    orariScelti=[];
-    lista_Orari.innerHTML="";
-    input_Orario.value="";
+    giorniScelti = [];
+    orariScelti = [];
+    lista_Orari.innerHTML = "";
+    input_Orario.value = "";
 
     giorni.forEach(giorno =>{
-        giorno.style.backgroundColor="";
-        giorno.style.color="";
+        giorno.style.backgroundColor = "";
+        giorno.style.color = "";
     });
 
 }
@@ -323,22 +297,16 @@ function pulisciGiorniOrari(){
 giorni.forEach(giorno =>{
     giorno.addEventListener("click", function(){
 
-        let nomeGiorno=giorno.textContent.trim();
+        let nomeGiorno = giorno.textContent.trim();
 
         if(giorniScelti.includes(nomeGiorno)){
-
-            giorniScelti=giorniScelti.filter(g => g!==nomeGiorno);
-
-            giorno.style.backgroundColor="";
-            giorno.style.color="";
-
+            giorniScelti = giorniScelti.filter(g => g !== nomeGiorno);
+            giorno.style.backgroundColor = "";
+            giorno.style.color = "";
         }else{
-
             giorniScelti.push(nomeGiorno);
-
-            giorno.style.backgroundColor="#cfd8ff";
-            giorno.style.color="black";
-
+            giorno.style.backgroundColor = "#cfd8ff";
+            giorno.style.color = "black";
         }
 
     });
@@ -347,9 +315,9 @@ giorni.forEach(giorno =>{
 
 button_Aggiungi_Orario.addEventListener("click", function(){
 
-    let orario=input_Orario.value;
+    let orario = input_Orario.value;
 
-    if(orario==""){
+    if(orario == ""){
         alert("Scegli prima un orario");
         return;
     }
@@ -361,68 +329,72 @@ button_Aggiungi_Orario.addEventListener("click", function(){
 
     orariScelti.push(orario);
 
-    let div=document.createElement("div");
-    div.className="Orario_Item";
+    let div = document.createElement("div");
+    div.className = "Orario_Item";
 
-    div.innerHTML=`
+    div.innerHTML = `
         <div class="text_Lista">${orario}</div>
         <div class="Delete_Orario">x</div>
     `;
 
     div.querySelector(".Delete_Orario").addEventListener("click", function(){
-
-        orariScelti=orariScelti.filter(o => o!==orario);
-
+        orariScelti = orariScelti.filter(o => o !== orario);
         div.remove();
-
     });
 
     lista_Orari.appendChild(div);
 
-    input_Orario.value="";
+    input_Orario.value = "";
 
 });
 
 
-// CONFERMA GIORNI E ORARI
+// CONFERMA: SALVA TUTTO NEL DATABASE
 
-let button_Conferma_Calendario=document.getElementById("Conferma_Calendario");
+let button_Conferma_Calendario = document.getElementById("Conferma_Calendario");
 
 button_Conferma_Calendario.addEventListener("click", async function(){
 
-    if(giorniScelti.length==0){
+    let utente = utenteLoggato;
+
+    if(!utente){
+        alert("Utente non autenticato");
+        return;
+    }
+
+    if(taskDaSalvare.length == 0){
+        alert("Errore: lista task vuota");
+        return;
+    }
+
+    if(giorniScelti.length == 0){
         alert("Scegli almeno un giorno");
         return;
     }
 
-    if(orariScelti.length==0){
+    if(orariScelti.length == 0){
         alert("Aggiungi almeno un orario");
-        return;
-    }
-
-    if(idCompetenzaSalvata==""){
-        alert("Errore: competenza non salvata");
         return;
     }
 
     try{
 
-        await updateDoc(doc(db, "competenze", idCompetenzaSalvata), {
-
+        await addDoc(collection(db, "competenze"), {
+            uid: utente.uid,
+            competenza: competenzaDaSalvare,
+            obiettivo: obiettivoDaSalvare,
+            listaTask: taskDaSalvare,
             giorni: giorniScelti,
-            orari: orariScelti
-
+            orari: orariScelti,
+            dataCreazione: new Date()
         });
 
-        alert("Organizzazione salvata!");
-
-        window.location.href="Schermata_Home.html";
+        alert("Competenza salvata!");
+        window.location.href = "Schermata_Home.html";
 
     }catch(errore){
-
         console.log(errore);
-        alert("Errore nel salvataggio giorni e orari");
-
+        alert("Errore nel salvataggio");
     }
 
 });

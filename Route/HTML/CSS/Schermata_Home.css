@@ -66,17 +66,22 @@
 /* SLIDER COMPETENZE */
     .SLIDER{
         width: 100%;
-        height: 8vh;;
-        padding: 0 1vh 0 1vh;
-        margin: 0; 
+        height: 8vh;
+        padding: 0 2vh;
+        margin: 0;
         margin-top: 0.5vh;
-        gap: 6vh;
+        gap: 4vh;
         display: flex;
         align-items: center;
-        overflow-x: auto;   
-        overflow-y: hidden;    
-        scrollbar-width: none;  
+        overflow-x: auto;
+        overflow-y: hidden;
+        flex-wrap: nowrap;
         border-bottom: 0.2vh solid gray;
+        scrollbar-width: thin;
+    }
+
+    .SLIDER p{
+        flex: 0 0 auto;
     }
 
     /* TITOLO COMPETENZA */

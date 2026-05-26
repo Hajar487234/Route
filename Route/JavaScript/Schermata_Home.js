@@ -55,6 +55,16 @@ pagina_Add.addEventListener("click", function(){
     window.location.href='Schermata_Add.html';
 });
 
+pagina_Garden.addEventListener("click", function(){
+    nascondi_Pagine();
+    window.location.href='../giardino/index.html';
+});
+
+pagina_Profile.addEventListener("click", function(){
+    nascondi_Pagine();
+    window.location.href='Schermata_Pu.html';
+});
+
 
 // CARICARE COMPETENZE
 
