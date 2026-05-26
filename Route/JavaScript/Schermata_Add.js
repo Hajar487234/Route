@@ -141,6 +141,7 @@ items.forEach(item =>{
 
 
 // INTEGRAZIONE INTELLIGENZA ARTIFICIALE
+// SOSTITUISCI CON IL TUO TOKEN HUGGING FACE
 
 button_Genera.addEventListener("click", async function(){
 
