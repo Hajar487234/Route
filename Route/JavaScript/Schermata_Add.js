@@ -162,6 +162,7 @@ button_Genera.addEventListener("click", async function(){
     Competenza: ${competenza}
     Obiettivo utente: ${obiettivo}
 
+    Rispondi SOLO con una lista numerata.
     Crea una lista di task molto specifici e pratici.
 
     Regole:
@@ -172,7 +173,6 @@ button_Genera.addEventListener("click", async function(){
     - crea almeno 15 task
     - usa linguaggio semplice
 
-    Rispondi solo con la lista numerata.
     `;
 
     try{
