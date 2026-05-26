@@ -31,20 +31,22 @@ const auth = getAuth(app);
 
 // PAGINA
 
-let Schermata_Home=document.getElementById("Schermata_Home");
+let Schermata_Home = document.getElementById("Schermata_Home");
 
-let pagina_Add=document.getElementById("Add");
-let pagina_Garden=document.getElementById("Garden");
-let pagina_Profile=document.getElementById("Profile");
+let pagina_Add = document.getElementById("Add");
+let pagina_Garden = document.getElementById("Garden");
+let pagina_Profile = document.getElementById("Profile");
 
-let slider_competenze=document.getElementById("slider_competenze");
+let slider_competenze = document.getElementById("slider_competenze");
 
-let Titolo_Comp=document.getElementById("Titolo_Comp");
+let Titolo_Comp = document.getElementById("Titolo_Comp");
 
-let lista_task_home=document.getElementById("lista_task_home");
+let lista_task_home = document.getElementById("lista_task_home");
+
+let Calendario_Settimanale = document.getElementById("Calendario_Settimanale");
 
 function nascondi_Pagine(){
-    Schermata_Home.style.display="none";
+    Schermata_Home.style.display = "none";
 }
 
 
@@ -52,8 +54,64 @@ function nascondi_Pagine(){
 
 pagina_Add.addEventListener("click", function(){
     nascondi_Pagine();
-    window.location.href='Schermata_Add.html';
+    window.location.href = "Schermata_Add.html";
 });
+
+
+// CALENDARIO SETTIMANALE
+
+function creaCalendarioSettimanale(){
+
+    Calendario_Settimanale.innerHTML = "";
+
+    const giorniSettimana = ["Dom", "Lun", "Mar", "Mer", "Gio", "Ven", "Sab"];
+
+    const oggi = new Date();
+
+    for(let i = 0; i < 7; i++){
+
+        const data = new Date();
+        data.setDate(oggi.getDate() + i);
+
+        const nomeGiorno = giorniSettimana[data.getDay()];
+        const numeroGiorno = data.getDate();
+
+        const giornoBox = document.createElement("div");
+        giornoBox.classList.add("Giorno_Box");
+
+        const testoOggi = document.createElement("p");
+
+        if(i === 0){
+            testoOggi.textContent = "oggi";
+        }else{
+            testoOggi.textContent = "";
+        }
+
+        const giornoCard = document.createElement("div");
+        giornoCard.classList.add("Giorno_Card");
+
+        if(i === 0){
+            giornoCard.classList.add("selected_day");
+        }
+
+        const span = document.createElement("span");
+        span.textContent = nomeGiorno;
+
+        const strong = document.createElement("strong");
+        strong.textContent = numeroGiorno;
+
+        giornoCard.appendChild(span);
+        giornoCard.appendChild(strong);
+
+        giornoBox.appendChild(testoOggi);
+        giornoBox.appendChild(giornoCard);
+
+        Calendario_Settimanale.appendChild(giornoBox);
+    }
+
+}
+
+creaCalendarioSettimanale();
 
 
 // CARICARE COMPETENZE
@@ -61,35 +119,41 @@ pagina_Add.addEventListener("click", function(){
 onAuthStateChanged(auth, async function(user){
 
     if(!user){
-        window.location.href="Schermata_Iniziale.html";
+        window.location.href = "Schermata_Iniziale.html";
         return;
     }
 
-    let dati=await getDocs(collection(db, "competenze"));
+    let dati = await getDocs(collection(db, "competenze"));
 
-    let competenzeUtente=[];
+    let competenzeUtente = [];
 
     dati.forEach(doc =>{
 
-        let dato=doc.data();
+        let dato = doc.data();
 
-        if(dato.uid==user.uid){
+        if(dato.uid == user.uid){
             competenzeUtente.push(dato);
         }
 
     });
 
-    slider_competenze.innerHTML="";
+    slider_competenze.innerHTML = "";
 
     competenzeUtente.forEach((comp, index)=>{
 
-        let p=document.createElement("p");
+        let p = document.createElement("p");
 
-        p.className="text_COMP";
+        p.className = "text_COMP";
 
-        p.textContent=comp.competenza;
+        p.textContent = comp.competenza;
 
         p.addEventListener("click", function(){
+
+            document.querySelectorAll(".text_COMP, .text_COMP_SELECTED").forEach(elemento =>{
+                elemento.className = "text_COMP";
+            });
+
+            p.className = "text_COMP_SELECTED";
 
             mostraCompetenza(comp);
 
@@ -97,7 +161,8 @@ onAuthStateChanged(auth, async function(user){
 
         slider_competenze.appendChild(p);
 
-        if(index==0){
+        if(index == 0){
+            p.className = "text_COMP_SELECTED";
             mostraCompetenza(comp);
         }
 
@@ -110,17 +175,17 @@ onAuthStateChanged(auth, async function(user){
 
 function mostraCompetenza(comp){
 
-    Titolo_Comp.textContent=comp.competenza;
+    Titolo_Comp.textContent = comp.competenza;
 
-    lista_task_home.innerHTML="";
+    lista_task_home.innerHTML = "";
 
-    let ol=document.createElement("ol");
+    let ol = document.createElement("ol");
 
     comp.listaTask.forEach(task =>{
 
-        let li=document.createElement("li");
+        let li = document.createElement("li");
 
-        li.textContent=task;
+        li.textContent = task;
 
         ol.appendChild(li);
 

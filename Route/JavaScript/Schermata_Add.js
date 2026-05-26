@@ -142,7 +142,7 @@ items.forEach(item =>{
 
 // INTEGRAZIONE INTELLIGENZA ARTIFICIALE
 
-let TOKEN_HF = "INCOLLA_TOKEN_HUGGING_FACE";
+let TOKEN_HF = "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";
 
 button_Genera.addEventListener("click", async function(){
 

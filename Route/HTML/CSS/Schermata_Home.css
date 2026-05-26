@@ -1,130 +1,273 @@
-/* TPYE FONT UTILIZZATO */
-    @font-face{
+/* TYPE FONT UTILIZZATO */
+@font-face{
     font-family: "MoreSugar";
     src: url("/Route/more-sugar.regular.ttf") format("truetype");
-    }
+}
 
-    *{ 
-    box-sizing:border-box; 
-    }
+*{ 
+    box-sizing: border-box; 
+}
 
 /* BODY */
-    body{
-        margin: 0;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        font-family: "MoreSugar", cursive;
-        background: url("/Route/HTML/immagini/sfondo.PNG") center/cover no-repeat;
-    }
+body{
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "MoreSugar", cursive;
+    background: url("/Route/HTML/immagini/sfondo.PNG") center/cover no-repeat;
+}
 
 /* CARATTERISTICHE FONT */
-    .text_COMP{
-        font-size: 3vh;
-        cursor: pointer;
-        user-select: none;
-        color: black;
-    }
-    .text_COMP_SELECTED{
-        font-size: 4.25vh;
-        cursor: pointer;
-        user-select: none;
-        color: black;
-    }
+.text_COMP{
+    font-size: 3vh;
+    cursor: pointer;
+    user-select: none;
+    color: black;
+
+    transition: 0.2s ease;
+    white-space: nowrap;
+}
+
+.text_COMP_SELECTED{
+    font-size: 4.25vh;
+    cursor: pointer;
+    user-select: none;
+    color: black;
+
+    transition: 0.2s ease;
+    white-space: nowrap;
+    transform: scale(1.05);
+}
 
 /* BACKGROUND APP */
-    .BG_APP{
-        width: 65vh;
-        height: 100vh;
-        border-radius: 2.5vh;
-        display: flex;
-        flex-direction: column;
-        align-items: stretch; 
-        background-color: white;
-        border: 0.3vh solid black;
-    }
-
-/* BARRA ICONE */
-    .BG_ICONS{
-        width: 100%;
-        height: 12.5vh;
-        border-radius: 2vh;
-        margin-top: auto; 
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        background-color: #349112;
-        border-top: 0.3vh solid #16332d;
-    }
-    .BG_ICONS img{
-        height: 80%;
-        width: auto;
-        cursor: pointer;
-    }
+.BG_APP{
+    width: 65vh;
+    height: 100vh;
+    border-radius: 2.5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; 
+    background-color: white;
+    border: 0.3vh solid black;
+    overflow: hidden;
+}
 
 /* SLIDER COMPETENZE */
-    .SLIDER{
-        width: 100%;
-        height: 8vh;;
-        padding: 0 1vh 0 1vh;
-        margin: 0; 
-        margin-top: 0.5vh;
-        gap: 6vh;
-        display: flex;
-        align-items: center;
-        overflow-x: auto;   
-        overflow-y: hidden;    
-        scrollbar-width: none;  
-        border-bottom: 0.2vh solid gray;
-    }
+.SLIDER{
+    width: 100%;
+    height: 8vh;
+    padding: 0 2vh;
+    margin: 0; 
+    margin-top: 0.5vh;
+    gap: 6vh;
 
-    /* TITOLO COMPETENZA */
+    display: flex;
+    align-items: center;
+
+    overflow-x: auto;   
+    overflow-y: hidden;    
+    scrollbar-width: none;  
+
+    border-bottom: 0.2vh solid gray;
+}
+
+.SLIDER::-webkit-scrollbar{
+    display: none;
+}
+
+/* TITOLO COMPETENZA */
 .Titolo_Comp{
-    width: 50%;
+    width: auto;
     min-height: 6vh;
+    padding: 1vh 1vh;
     margin: 2vh auto 1vh auto;
     border-radius: 1vh;
+
     background-color: #dfeeda;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     font-size: 4vh;
     color: black;
+    user-select: none;
 }
 
-/* BOX TASK */
-.Box_Task{
+/* CALENDARIO SETTIMANALE */
+.Calendario_Settimanale{
     width: 90%;
-    height: 63vh;
-    margin: 1vh auto;
-    background-color: #fff8c9;
-    border: 0.25vh solid black;
-    border-radius: 1vh;
-    padding: 1vh;
-    overflow-y: auto;
+    height: 8.5vh;
+
+    margin: 0 auto 1vh auto;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scrollbar-width: none;
 }
 
-/* TITOLO TASK */
-.Titolo_Task{
+.Calendario_Settimanale::-webkit-scrollbar{
+    display: none;
+}
+
+.Giorno_Box{
+    width: 7vh;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+
+    flex-shrink: 0;
+}
+
+.Giorno_Box p{
+    width: 100%;
+    height: 1.8vh;
+
     margin: 0;
-    padding-bottom: 1vh;
-    border-bottom: 0.2vh solid #a38c38;
-    font-size: 3vh;
+    padding: 0;
+
+    font-size: 1.4vh;
+    color: gray;
+    line-height: 1;
+
     text-align: center;
+}
+
+.Giorno_Card{
+    width: 6vh;
+    height: 5.7vh;
+
+    border-radius: 1vh;
+    border: 0.2vh solid black;
+
+    background-color: white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    user-select: none;
+}
+
+.Giorno_Card span{
+    font-size: 1.8vh;
+    color: black;
+    line-height: 1;
+}
+
+.Giorno_Card strong{
+    font-size: 2.2vh;
+    color: black;
+    line-height: 1.1;
+}
+
+.selected_day{
+    background-color: #fff8c9;
+}
+
+/* SEZIONE TASK COMPLETA */
+.Sezione_Task{
+    width: 90%;
+    height: 54vh;
+
+    margin: 1vh auto 0 auto;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* BARRA TITOLO TASK */
+.Titolo_Task_Barra{
+    width: 100%;
+    height: 5.5vh;
+
+    border-radius: 1.5vh;
+    background-color: #e7b947;
+    border: 0.2vh solid #16332d;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    padding-left: 1.5vh;
+
+    font-size: 3.3vh;
+    color: black;
+
+    user-select: none;
+}
+
+/* BOX LISTA TASK */
+.Box_Task{
+    width: 100%;
+    height: calc(54vh - 6.5vh);
+
+    margin-top: 1.2vh;
+
+    background-color: #fff8c9;
+    border: 0.2vh solid #16332d;
+    border-radius: 1.5vh;
+
+    padding: 1.5vh 2vh;
+
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+.Box_Task::-webkit-scrollbar{
+    display: none;
 }
 
 /* LISTA TASK HOME */
 #lista_task_home{
-    font-size: 2.3vh;
-    line-height: 1.5;
+    width: 100%;
+
+    font-size: 2.55vh;
+    line-height: 1.45;
+
+    color: #5b3500;
 }
 
 #lista_task_home ol{
-    margin-top: 1vh;
-    padding-left: 4vh;
+    margin: 0;
+    padding-left: 3.5vh;
 }
 
 #lista_task_home li{
     margin-bottom: 1vh;
+    padding-left: 0.3vh;
+}
+
+/* BARRA ICONE */
+.BG_ICONS{
+    width: 100%;
+    height: 12.5vh;
+
+    border-radius: 2vh;
+    margin-top: auto; 
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    background-color: #349112;
+    border-top: 0.3vh solid #16332d;
+}
+
+.BG_ICONS img{
+    height: 80%;
+    width: auto;
+    cursor: pointer;
 }
