@@ -142,8 +142,6 @@ items.forEach(item =>{
 
 // INTEGRAZIONE INTELLIGENZA ARTIFICIALE
 
-// mettere qui la variabile TOKEN_HF con il token di Hugging Face.
-
 button_Genera.addEventListener("click", async function(){
 
     let obiettivo=text_Obiettivo.value.trim();
