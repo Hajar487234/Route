@@ -142,7 +142,7 @@ items.forEach(item =>{
 
 // INTEGRAZIONE INTELLIGENZA ARTIFICIALE
 
-let TOKEN_HF = "METTER QUI TOKEN RELATIVO A HUGGING FACE";
+// let TOKEN_HF = "METTER QUI TOKEN RELATIVO A HUGGING FACE";
 
 button_Genera.addEventListener("click", async function(){
 
