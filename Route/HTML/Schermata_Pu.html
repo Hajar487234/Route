@@ -71,7 +71,7 @@
 
                 <div class="BOX_PREF">
                     <p class="text_TIPO">Gestione account</p>
-                    <div class="PREMI_ACC" style="background-color: white;">
+                    <div class="PREMI_ACC" style="background-color: white;" id="logout">
                         <p class="text_TIPO_UNDER">Log out</p>
                     </div>
                     <div class="PREMI_ACC" style="background-color: red; color: black;">
@@ -96,5 +96,11 @@
             document.getElementById("indietro_Home").addEventListener("click", function(){
                 window.location.href = "Schermata_Home.html";
             });
+
+            document.getElementById("logout").addEventListener("click", function(){
+                window.location.href = "Schermata_Iniziale.html";
+            });
+
+
         </script>
     </body>
